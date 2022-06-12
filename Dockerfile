@@ -3,8 +3,8 @@ EXPOSE 8080
 VOLUME /temp
 WORKDIR /springdockerdemo
 
-RUN apt-get update  
-RUN apt-get install -y maven
+RUN apk-get update  
+RUN apk-get install -y maven
 ADD pom.xml /springdockerdemo/pom.xml  
 RUN ["mvn", "dependency:resolve"]  
 RUN ["mvn", "verify"]
